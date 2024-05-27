@@ -12,8 +12,7 @@
 .editor .content {
   border: 1px solid #ccc;
   padding: 10px;
-  min-height: 650px;
-  min-width: 800px;
+  min-height: 700px;
   position: relative;
 }
 
@@ -48,10 +47,85 @@
   text-align: center;
   cursor: pointer;
   display: none;
-  opacity: 0.3;
 }
 
 .insert-image-button:hover {
   background-color: #0056b3;
-  opacity: 1;
+}
+
+/* Modal styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal.show {
+  display: flex;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Image caption styling */
+.image-container {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.image-caption {
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 20px);
+  background: rgba(255, 255, 255, 0.7);
+  padding: 5px;
+  box-sizing: border-box;
+  text-align: center;
+  cursor: text;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.resize-menu {
+  position: absolute;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
 }

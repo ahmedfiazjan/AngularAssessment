@@ -1,8 +1,6 @@
-<div class="toolbar">
-  <!-- Remove the original Insert Image button from here -->
-</div>
+<div class="toolbar"></div>
 <div class="editor">
-  <input type="text" placeholder="Enter the title" [(ngModel)]="title"/>
+  <input type="text" placeholder="Enter the title" [(ngModel)]="title" />
   <div class="content" contenteditable="true" (input)="onContentChange($event)" (click)="updateInsertButtonPosition($event)" (keyup)="updateInsertButtonPosition($event)">
     <p></p>
   </div>
@@ -12,3 +10,20 @@
   +
 </button>
 <input type="file" #fileInput style="display:none" (change)="onFileSelected($event)" accept="image/*">
+
+<!-- Modal for previewing the article -->
+<div id="previewModal" class="modal" [ngClass]="{'show': showModal}">
+  <div class="modal-content">
+    <span class="close" (click)="closeModal()">&times;</span>
+    <h2>{{ title }}</h2>
+    <div [innerHTML]="content"></div>
+  </div>
+</div>
+
+<!-- Pop-up menu for image resizing -->
+<div id="resizeMenu" class="resize-menu" [ngStyle]="resizeMenuStyle" *ngIf="showResizeMenu1">
+  <button (click)="resizeImage('50%')">50%</button>
+  <button (click)="resizeImage('100%')">100%</button>
+  <button (click)="resizeImage('auto')">Auto</button>
+  <button (click)="closeResizeMenu()">Close</button>
+</div>
