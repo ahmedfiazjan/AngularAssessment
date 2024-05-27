@@ -1,0 +1,57 @@
+.editor {
+  width: 600px;
+  margin: 0 auto;
+}
+
+.editor input {
+  width: 100%;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.editor .content {
+  border: 1px solid #ccc;
+  padding: 10px;
+  min-height: 650px;
+  min-width: 800px;
+  position: relative;
+}
+
+.toolbar {
+  display: none; /* Hide the original toolbar */
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.insert-image-button {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+  cursor: pointer;
+  display: none;
+  opacity: 0.3;
+}
+
+.insert-image-button:hover {
+  background-color: #0056b3;
+  opacity: 1;
+}

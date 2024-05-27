@@ -1,0 +1,14 @@
+<div class="toolbar">
+  <!-- Remove the original Insert Image button from here -->
+</div>
+<div class="editor">
+  <input type="text" placeholder="Enter the title" [(ngModel)]="title"/>
+  <div class="content" contenteditable="true" (input)="onContentChange($event)" (click)="updateInsertButtonPosition($event)" (keyup)="updateInsertButtonPosition($event)">
+    <p></p>
+  </div>
+  <button class="btn-primary" (click)="publish()">Publish</button>
+</div>
+<button class="insert-image-button" (click)="triggerFileInput()" #insertImageButton>
+  +
+</button>
+<input type="file" #fileInput style="display:none" (change)="onFileSelected($event)" accept="image/*">
